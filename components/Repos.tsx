@@ -35,23 +35,23 @@ export default function Repos() {
     }, [repositories])
 
   return (
-    <div className="grid grid-cols-3 gap-5 items-center px-[15%]">
+    <div className="grid grid-cols-1 gap-5 items-center justify-center px-[5%] md:grid-cols-2 lg:grid-cols-3 md:px-[10%] lg:px-[15%]">
       {repositories.map((repos) => (
         <div
           key={repos.id}
           className="relative flex flex-col items-center gap-3 bg-blue-700 text-white rounded-md py-2 px-5"
         >
           <div className="flex items-center justify-between w-full">
-            <h2>{repos.full_name}</h2>
+            <h2 className='font-semibold'>{repos.full_name}</h2>
             <img
               className="w-[30px] rounded-[50%]"
               src={repos.owner.avatar_url}
               alt=""
             />
           </div>
-          <div>
+          <div className='w-full'>
           <Link href={repos.url} target='_blank'>
-            <button className='bg-blue-600 py-2 px-5 rounded-md'>Visit Repo</button>
+            <button className='bg-blue-600 py-2 px-5 rounded-md w-full'>Visit Repo</button>
           </Link>
           </div>
         </div>
